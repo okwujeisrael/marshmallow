@@ -4,32 +4,32 @@ import { useSelector, useDispatch } from 'react-redux';
 import Card from '../components/Card';
 import Modal from '../components/Modal';
 import Loading from '../components/Loading';
-import { fetchDragons, fetchRockets } from '../actions'
-import { TPayload } from '../actions/actionTypes'
-import { Rootstore }  from '../index'
+import { fetchDragons, fetchRockets } from '../actions';
+import { TPayload } from '../actions/actionTypes';
+import { Rootstore }  from '../';
 
 const Homepage: React.FC = () => {
-  const [spaceCrafts, setSpaceCrafts] = useState<TPayload>([])
-  const { dragons, rockets } = useSelector((state: Rootstore) => state)
-  const dispatch = useDispatch()
+  const [spaceCrafts, setSpaceCrafts] = useState<TPayload>([]);
+  const { dragons, rockets } = useSelector((state: Rootstore) => state);
+  const dispatch = useDispatch();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     const { name } = e.target as HTMLButtonElement;
     if (name === "dragons") 
-      setSpaceCrafts([...dragons])
+      setSpaceCrafts([...dragons]);
     if (name === "rockets") 
-      setSpaceCrafts([...rockets])
+      setSpaceCrafts([...rockets]);
   }
 
 
   useEffect(() => {
-    dispatch(fetchRockets())
-    dispatch(fetchDragons())
+    dispatch(fetchRockets());
+    dispatch(fetchDragons());
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
-    setSpaceCrafts([...dragons, ...rockets])
+    setSpaceCrafts([...dragons, ...rockets]);
   }, [dragons, rockets])
   
   return (
@@ -70,4 +70,4 @@ const Homepage: React.FC = () => {
   )
 }
 
-export default Homepage
+export default Homepage;

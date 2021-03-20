@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { TPayloadProps } from '../actions/actionTypes'
-import { fetchModalDescription, fetchModalImage } from '../actions'
+import { TPayloadProps } from '../actions/actionTypes';
+import { fetchModalDescription, fetchModalImage } from '../actions';
 
 const Card: React.FC<TPayloadProps> = (props) => {
   const { name, id, flickr_images, description, rocket_name } = props;
@@ -27,6 +27,7 @@ const Card: React.FC<TPayloadProps> = (props) => {
           (name && name.toUpperCase()) || (rocket_name && rocket_name.toUpperCase()) 
         }
       </h3>
+      <small className="text-black">Click image to enlarge</small>
 
       <div className="flex justify-center flex-wrap">
         {

@@ -38,6 +38,6 @@ export default function modalReducer(state: IModalContent = initialState, action
         image: action.payload 
       };
     default:
-      return state
+      return state;
   }
 }
