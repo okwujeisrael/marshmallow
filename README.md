@@ -1,3 +1,22 @@
+
+# PROJECT GIF
+
+<img src="public/marshmallow.gif">
+
+# APPLICANT NOTE
+The React and Redux bits in this project are in Typescript.
+I used redux hooks, animate.css library for modal and card animations, and TailwindCSS for styling
+I wrote a simple End-to-end test in Cypress which can be run with the following command:
+
+### `yarn cypress:open`
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

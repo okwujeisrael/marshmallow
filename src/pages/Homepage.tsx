@@ -39,6 +39,7 @@ const Homepage: React.FC = () => {
           className="mr-2 bg-pink-700 py-2 px-4 rounded-lg dosis-bold"
           onClick={handleClick}
           name="rockets"
+          data-cy="rockets-btn"
         >
           Rockets
         </button>
@@ -46,8 +47,9 @@ const Homepage: React.FC = () => {
           className="ml-3 bg-pink-700 py-2 px-4 rounded-lg dosis-bold"
           onClick={handleClick}
           name="dragons"
+          data-cy="dragons-btn"
         >
-          Dragon
+          Dragons
         </button>
       </div>
       {
@@ -60,12 +62,10 @@ const Homepage: React.FC = () => {
             description={spaceCraft.description}
             flickr_images={spaceCraft.flickr_images}
           />
-        )) :
-        <Loading />  
+        )) : <Loading />  
       }
 
-      <Modal 
-      />
+      <Modal />
     </section>
   )
 }

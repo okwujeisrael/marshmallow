@@ -17,7 +17,7 @@ const Modal = () => {
     <div className="w-5/12 h-42 bg-white text-black p-4 rounded-lg text-center">
       <div>
         <h3 className="text-pink-700 dosis-bold text-2xl pb-2">DESCRIPTION</h3>
-        <p >{modal.description}</p>     
+        <p data-cy="modal-description">{modal.description}</p>     
       </div>
     </div>
   )
@@ -26,7 +26,8 @@ const Modal = () => {
     <img 
       src={modal.image} 
       alt="modal-shot" 
-      className="w-1/2 h-1/2 border-4 border-white" 
+      className="w-1/2 h-1/2 border-4 border-white"
+      data-cy="modal-image" 
     />
   )
 
@@ -38,6 +39,7 @@ const Modal = () => {
           <div 
             className="modal fixed top-0 left-0 w-screen h-screen bg-black modal-background flex items-center justify-center cursor-pointer animate__animated animate__flipInX"
             onClick={handleClick}
+            data-cy="modal"
           >
             {
               modal.image ? imageContent() : textContent()
