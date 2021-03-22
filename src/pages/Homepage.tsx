@@ -14,10 +14,9 @@ const Homepage: React.FC = () => {
   const dispatch = useDispatch();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    const { name } = e.target as HTMLButtonElement;
-    if (name === "dragons") 
+    if (e.currentTarget.name === "dragons") 
       setSpaceCrafts([...dragons]);
-    if (name === "rockets") 
+    if (e.currentTarget.name === "rockets") 
       setSpaceCrafts([...rockets]);
   }
 
@@ -25,7 +24,6 @@ const Homepage: React.FC = () => {
   useEffect(() => {
     dispatch(fetchRockets());
     dispatch(fetchDragons());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {

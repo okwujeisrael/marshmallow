@@ -13,8 +13,8 @@ const Card: React.FC<TPayloadProps> = (props) => {
     const { tagName } = e.currentTarget
     if (tagName === "BUTTON") 
       dispatch(fetchModalDescription(description))
-    if (tagName === "IMG") 
-      dispatch(fetchModalImage((e.currentTarget as HTMLImageElement).src))
+    if (tagName === "IMG")
+      dispatch(fetchModalImage(e.currentTarget.id))
   }
 
   return (
@@ -34,7 +34,8 @@ const Card: React.FC<TPayloadProps> = (props) => {
         {
           flickr_images.map((image, i) => (
             <img 
-              src={image} 
+              src={image}
+              id={image}
               key={`img${i}`} 
               alt={`img${i}`}
               className="w-16 h-16 m-2 border-4 border-white" 

@@ -5,7 +5,7 @@ import { toggle } from '../actions';
 import { Rootstore } from '../index';
 
 
-const Modal = () => {
+const Modal: React.FC = () => {
   const { modal }  = useSelector((state: Rootstore) => state);
   const dispatch = useDispatch();
 
